@@ -1,0 +1,122 @@
+<div class="content-wrapper" style="min-height: 1068.81px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Consent
+            <small>give or revoke permission for tracking </small>
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> Settings</a>
+            </li>
+            <li class="active">Consent</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="callout callout-info">
+            <h4>Introduction</h4>
+            This form provides you with detailed information about your rights when using the Trusted Learning Analytics Platform. Below,
+            you are given an overview over all rights that the law provides to you in regard to the data that will be collected
+            you you.
+            <a routerLink="/courses" routerLinkActive="active">test course</a>
+        </div>
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+                <div class="box box-warning">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Data Collection</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p class="help-block">
+                                {{(dataCollection|async)?.title}}
+                                {{(dataCollection|async)?.title}}
+                           </p>
+                        <form role="form">
+                            <!-- text input -->
+
+                            <!-- checkbox -->
+                            <div class="form-group" *ngFor="let entry of (dataCollection|async)?.entries">
+                                <label>{{entry.title}}</label>
+                                <p class="help-block">{{entry.description}}</p>
+                                <div class="checkbox">
+
+                                    <label>
+                                        <input type="checkbox"> {{entry.checkBoxLabel}}
+                                        
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <!-- radio -->
+
+                        </form>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+            <!--/.col (left) -->
+            <div class="col-md-6">
+                <!-- general form elements -->
+
+
+                <div class="box box-warning">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Data Storage Information</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p class="help-block">Information about where the data is stored</p>
+                        <form role="form">
+                            <!-- text input -->
+
+                          
+                            <!-- radio -->
+
+                        </form>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+                <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Your Rights</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                           
+                            <form role="form">
+                                <!-- text input -->
+    
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <label>Right To Be Informed</label>
+                                    <p class="help-block">You will be informed what is happening with your data in a transparent manner</p>
+                                    
+    
+                                </div>
+    
+                                <!-- radio -->
+    
+                            </form>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+
+                <!-- /.box -->
+
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      
+
+    </section>
+
+
+    <!-- /.content -->
+</div>
