@@ -1,0 +1,33 @@
+<!-- <h1>header</h1> -->
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="nav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <span>TRU
+        <b>LA</b>
+    </span>
+    <span class="example-fill-remaining-space"></span>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Data</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Functionality</span>
+        </button>
+        <button mat-menu-item [routerLink] ="['/consent']">
+            <mat-icon>voicemail</mat-icon>
+            <span>Widgets</span>
+        </button>
+        <button mat-menu-item routerLink="/consent">
+            <mat-icon>notifications_off</mat-icon>
+            <span>Consent</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

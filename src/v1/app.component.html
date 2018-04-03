@@ -1,0 +1,15 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+  <trula-header [nav]="nav"></trula-header>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidebar [mode]="mobileQuery.matches ? 'over' : 'side'">
+      <trula-sidebar></trula-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+  
+</div>
