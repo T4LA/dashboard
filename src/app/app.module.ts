@@ -33,6 +33,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MediaMatcher} from '@angular/cdk/layout';
 
 import { ThemeModule } from './navigation/navigation.module';
+import { PrivacyDashboardComponent } from './settings/privacy-dashboard.component';
 
 @NgModule({
   imports: [
@@ -57,7 +58,7 @@ import { ThemeModule } from './navigation/navigation.module';
 
       { path: 'courses', component: CoursesComponent },
       { path: 'course/:courseid', component: CoursesPageComponent },
-
+      { path: 'settings/privacy', component: PrivacyDashboardComponent }
       { path: 'widgetConfig', component: WidgetConfiguratorComponent },
 
       
@@ -71,8 +72,8 @@ import { ThemeModule } from './navigation/navigation.module';
     ConsentComponent,
     WidgetConfiguratorComponent,
     CoursesComponent,
-    CoursesPageComponent
-
+    CoursesPageComponent,
+    PrivacyDashboardComponent
   ],
   providers: [
     { provide: MockConsentService, useClass: MockConsentService }, 
