@@ -1,73 +1,29 @@
 <div class="content-wrapper" style="min-height: 1068.81px;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Computer Graphics
-        </h1>
-        <ol class="breadcrumb">
-            <li>
-                <a href="#">
-                    <i class="fa fa-dashboard"></i> Settings</a>
-            </li>
-            <li class="active">Consent</li>
-        </ol>
-    </section>
-    <section class="content">
-       
+  <!-- Content Header (Page header) -->
+   <section class="content-header">
+    <h1>
+      {{(template|async)?.title}}
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">
+          <i class="fa fa-dashboard"></i> Courses</a>
+      </li>
+      <li class="active">Computer Graphics</li>
+      <li class="active">MOOC Monitor</li>
+    </ol>
+  </section>
+ <section class="content">
 
-        <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">My recent course activities</h3>
-    
-                  <div class="box-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-    
-                      <div class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tbody><tr>
-                      <th>CourseID</th>
-                      <th>Title</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th>Comment</th>
-                    </tr>
-                    <tr>
-                      <td>CG_213</td>
-                      <td>Computer Graphics</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-success">Started</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>NET_234</td>
-                      <td>Computer Networks</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                   
-                  </tbody></table>
-                </div>
-                <!-- /.box-body -->
-              </div>
-              <!-- /.box -->
-            </div>
-          </div>
-        <!-- /.row -->
-      
-
-    </section>
+    <div class="row" *ngFor="let row of (template|async)?.rows">
+      <course-intro *ngIf="row.type == 'intro'" [data]="row" ></course-intro>
+      <course-columns *ngIf="row.type === 'columns'" [data]="row"></course-columns>
+     
+    </div>
 
 
-    <!-- /.content -->
+  </section> 
+
+
+  <!-- /.content -->
 </div>

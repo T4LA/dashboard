@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CourseTemplateService } from './../services/template.service';
 
 
 @Component({
@@ -8,10 +9,11 @@ import { Component } from '@angular/core';
 })
 export class CoursesPageComponent {
 
-  dataCollection : any;
+  template : any;
 
-  constructor() {
-    
+  constructor(private templateService: CourseTemplateService) {
+    this.template = templateService.getCourseTemplate();
+
   }
 
 
