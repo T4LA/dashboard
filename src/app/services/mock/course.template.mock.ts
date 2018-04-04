@@ -13,12 +13,52 @@ export const data= {
                 {
                     "class" : ['col-xs-8'],
                     "widgetTitle": "Mooc Monitor",
-                    "text" : "intro text"
+                    "text" : "intro text",
+                    "vizId" : "ngx-barchart",
+                    "data" : {
+                        "metadata":{
+                            "xAxis": "Country",
+                            "yAxis": "Population",
+                        },
+                        "data":[
+                        {
+                          "name": "Germany",
+                          "value": 8940000
+                        },
+                        {
+                          "name": "Belgium",
+                          "value": 5000000
+                        },
+                        {
+                          "name": "France",
+                          "value": 7200000
+                        }
+                      ]}
                 },
                 {
                     "class" : ['col-xs-4'],
                     "widgetTitle": "Simplified view",
-                    "text" : "intro text"
+                    "text" : "intro text",
+                    "vizId" : "array",
+                    "data" : {
+                        "metadata":{
+                            "xAxis": "Country",
+                            "yAxis": "Population",
+                        },
+                        "data":[
+                        {
+                          "name": "Germany",
+                          "value": 8940000
+                        },
+                        {
+                          "name": "Belgium",
+                          "value": 5000000
+                        },
+                        {
+                          "name": "France",
+                          "value": 7200000
+                        }
+                      ]}
                 },
             ]
                 

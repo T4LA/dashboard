@@ -18,8 +18,11 @@
             </div>
           </div>
           
-          <div class="box-body table-responsive no-padding">
-            {{col.text}}
+          <div class="box-body">
+            <div class="chart" >
+                
+            <visualisation [id]="col.vizId" [visData]="col.data"></visualisation>
+          </div>
           </div>
 
         </div>

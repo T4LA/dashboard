@@ -38,6 +38,7 @@ import { ThemeModule } from './navigation/navigation.module';
 // import {CourseModule} from './courses/course.module';
 
 import {AppRouterModule} from './app.router.module';
+import {VizModule} from './viz/viz.module';
 
 @NgModule({
   imports: [
@@ -53,6 +54,7 @@ import {AppRouterModule} from './app.router.module';
     MatIconModule,MatMenuModule,MatListModule,
     MatExpansionModule,MatCardModule,MatDividerModule,
     ThemeModule.forRoot(),
+    VizModule,
     AppRouterModule,
     // RouterModule.forRoot([
     //   // { path: '', component: CoursesComponent },

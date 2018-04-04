@@ -5,20 +5,12 @@ import {CoursesPageComponent} from './course.page.component';
 import {CoursesIntroComponent} from './course.section.intro.component';
 import {CoursesColumnsComponent} from './course.section.columns.component';
 import {CoursesComponent} from './courses.component'
-// import { RouterModule, Routes } from '@angular/router';
 
 import {CourseRouterModule} from './course.router.module'
-
-
-const COMPONENTS = [
-    CoursesPageComponent,
-    CoursesIntroComponent,
-    CoursesComponent
-];//
-
+import {VizModule} from '../viz/viz.module';
 
 @NgModule({
-    imports: [CourseRouterModule,CommonModule],
+    imports: [CourseRouterModule,CommonModule,VizModule],
     
     declarations: [
         CoursesComponent,
