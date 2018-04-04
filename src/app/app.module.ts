@@ -58,10 +58,8 @@ import { PrivacyDashboardComponent } from './settings/privacy-dashboard.componen
 
       { path: 'courses', component: CoursesComponent },
       { path: 'course/:courseid', component: CoursesPageComponent },
-      { path: 'settings/privacy', component: PrivacyDashboardComponent }
+      { path: 'settings/privacy', component: PrivacyDashboardComponent },
       { path: 'widgetConfig', component: WidgetConfiguratorComponent },
-
-      
     ])
   ],
   entryComponents: [

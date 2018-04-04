@@ -3,7 +3,7 @@ export const data = [
         "title": "Learning Analytics Seminar",
         "lecturer": "Hendrik Drachsler",
         "startDate": "04.04.2018",
-        "widgets": [
+        'widgets': [
             {
                 "name": "Assignment Grade Chart",
                 "data":[
@@ -19,20 +19,20 @@ export const data = [
         ],
         "data":[
             {
-                "name": "Number of Forum Posts",
-                "enabled": true,
-                "canBeDisabled": true
+                'name': 'Number of Forum Posts',
+                'enabled': true,
+                'canBeDisabled': true
             },
             {
-                "name": "Assignment Grades",
-                "enabled": true,
-                "canBeDisabled": false
+                'name': 'Assignment Grades',
+                'enabled': true,
+                'canBeDisabled': false
             },
             {
-                "name": "Number of videos watched",
-                "enabled": true,
-                "canBeDisabled": true
+                'name': 'Number of videos watched',
+                'enabled': true,
+                'canBeDisabled': true
             }
         ]
     }
-]
+];

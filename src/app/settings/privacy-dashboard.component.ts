@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-@Compontent({
+@Component({
     selector: 'privacy-dashboard',
     template: require('./privacy-dashboard.component.html')
 })
