@@ -98,6 +98,47 @@
                     </div>
                 </div>
             </div>
+
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Browser Usage</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer no-padding">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li>
+                            <button class="btn-primary btn" (click)="downloadClick()">
+                                <i class="fa fa-download" aria-hidden="true"> </i>
+                                Download</button>
+                        </li>
+                        <li>
+                            <button class="btn-warning btn pull-right" (click)="pauseClick()">
+                                <i class="fa fa-pause" aria-hidden="true"> </i>
+                                Pause</button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.footer -->
+            </div>
         </div>
+
+
+
     </section>
 </div>

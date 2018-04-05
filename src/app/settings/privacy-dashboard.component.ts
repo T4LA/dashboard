@@ -9,6 +9,7 @@ import { MockCourseService } from '../services/mock/course.service';
 
 export class PrivacyDashboardComponent {
     courseData: any;
+    selectedData: any;
 
     constructor(private courseService: MockCourseService) {
         this.courseData = courseService.getCourseSettings();
