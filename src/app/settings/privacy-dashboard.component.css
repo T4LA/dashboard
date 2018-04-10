@@ -1,5 +1,22 @@
 .data-collection-grid{
     display: grid;
-    grid-template-columns: 70% 30%;
-    grid-column-gap: 10px;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-gap: 10px;
+}
+
+.active-row {
+    background-color: rgb(170, 170, 209);
+}
+
+.dataDescription {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.data-collection-overview {
+    grid-column: col-start / span 8;
+}
+
+.selected-data-item{
+    grid-column: col-start 9 / span 4;
 }

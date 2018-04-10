@@ -20,103 +20,50 @@
                     <h3 class="box-title">Data Settings</h3>
                 </div>
                 <div class="box-body">
-                    <div class="table-responsive">
-                        <table class="table no-margin">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        Assignment Grades
-                                    </td>
-                                    <td>The grades for your assignments</td>
-                                    <td>
-                                        <span class="label label-success">Enabled</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="pages/examples/invoice.html">OR1848</a>
-                                    </td>
-                                    <td>Samsung Smart TV</td>
-                                    <td>
-                                        <span class="label label-warning">Pending</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="pages/examples/invoice.html">OR7429</a>
-                                    </td>
-                                    <td>iPhone 6 Plus</td>
-                                    <td>
-                                        <span class="label label-danger">Delivered</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="pages/examples/invoice.html">OR7429</a>
-                                    </td>
-                                    <td>Samsung Smart TV</td>
-                                    <td>
-                                        <span class="label label-info">Processing</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="pages/examples/invoice.html">OR1848</a>
-                                    </td>
-                                    <td>Samsung Smart TV</td>
-                                    <td>
-                                        <span class="label label-warning">Pending</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="pages/examples/invoice.html">OR7429</a>
-                                    </td>
-                                    <td>iPhone 6 Plus</td>
-                                    <td>
-                                        <span class="label label-danger">Delivered</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="pages/examples/invoice.html">OR9842</a>
-                                    </td>
-                                    <td>Call of Duty IV</td>
-                                    <td>
-                                        <span class="label label-success">Shipped</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <ng-container *ngFor="let course of courseData; let courseIndex = index">
+                        <h4>{{ course.title }}</h4>
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of course.data; let i = index" (click)="highlightClickedRow(courseIndex, i)" [class.active-row]="i == selectedRow && courseIndex == selectedCourse">
+                                        <td>
+                                            {{ data.name }}
+                                        </td>
+                                        <td>
+                                            <span class="dataDescription">{{ data.description }}</span>
+                                            
+                                        </td>
+                                        <td>
+                                            <span *ngIf="data.enabled" class="label label-success">Enabled</span>
+                                            <span *ngIf="!data.enabled" class="label label-danger">Disabled</span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </ng-container>
                 </div>
             </div>
 
-            <div class="box box-default">
+            <div *ngIf="selectedDataItem" class="box box-default selected-data-item" >
                 <div class="box-header with-border">
-                    <h3 class="box-title">Browser Usage</h3>
+                    <h3 class="box-title">{{ selectedDataItem.name }}</h3>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove">
-                            <i class="fa fa-times"></i>
-                        </button>
-                    </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <div class="row">
-
-                    </div>
+                        <strong>Description</strong>
+                        <p>
+                            {{ selectedDataItem.description }}
+                        </p>
                     <!-- /.row -->
                 </div>
                 <!-- /.box-body -->
