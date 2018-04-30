@@ -38,7 +38,7 @@
                                         </td>
                                         <td>
                                             <span class="dataDescription">{{ data.description }}</span>
-                                            
+
                                         </td>
                                         <td>
                                             <span *ngIf="data.enabled" class="label label-success">Enabled</span>
@@ -53,35 +53,42 @@
                 </div>
             </div>
 
-            <div *ngIf="selectedDataItem" class="box box-default selected-data-item" >
-                <div class="box-header with-border">
-                    <h3 class="box-title">{{ selectedDataItem.name }}</h3>
+            <div class="selected-data-item">
+                <div *ngIf="selectedDataItem" class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">{{ selectedDataItem.name }}</h3>
 
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
                         <strong>Description</strong>
                         <p>
                             {{ selectedDataItem.description }}
                         </p>
-                    <!-- /.row -->
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer no-padding">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li>
+                                <div class="button-list">
+                                    <button class="btn-primary btn btn-app" (click)="downloadClick()">
+                                        <i class="fa fa-download" aria-hidden="true"> </i>
+                                        Download</button>
+                                    <button class="btn-warning btn btn-app" (click)="pauseClick()">
+                                        <i class="fa fa-pause" aria-hidden="true"> </i>
+                                        Pause</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.footer -->
                 </div>
-                <!-- /.box-body -->
-                <div class="box-footer no-padding">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li>
-                            <button class="btn-primary btn" (click)="downloadClick()">
-                                <i class="fa fa-download" aria-hidden="true"> </i>
-                                Download</button>
-                        </li>
-                        <li>
-                            <button class="btn-warning btn pull-right" (click)="pauseClick()">
-                                <i class="fa fa-pause" aria-hidden="true"> </i>
-                                Pause</button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.footer -->
+            </div>
+            <div class="main-function">
+                <button class="btn-app btn-primary btn pull-right" (click)="pauseClick()">
+                    <i class="fa fa-envelope" aria-hidden="true"> </i>
+                    Contact</button>
             </div>
         </div>
 

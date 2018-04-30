@@ -20,3 +20,10 @@
 .selected-data-item{
     grid-column: col-start 9 / span 4;
 }
+
+.button-list{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
