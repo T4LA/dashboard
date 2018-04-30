@@ -34,6 +34,7 @@ import {MediaMatcher} from '@angular/cdk/layout';
 
 import { ThemeModule } from './navigation/navigation.module';
 import { PrivacyDashboardComponent } from './settings/privacy-dashboard.component';
+import { EventTimelineComponent } from './settings/event-timeline.component';
 
 @NgModule({
   imports: [
@@ -59,6 +60,7 @@ import { PrivacyDashboardComponent } from './settings/privacy-dashboard.componen
       { path: 'courses', component: CoursesComponent },
       { path: 'course/:courseid', component: CoursesPageComponent },
       { path: 'settings/privacy', component: PrivacyDashboardComponent },
+      { path: 'settings/privacy/timeline', component: EventTimelineComponent },
       { path: 'widgetConfig', component: WidgetConfiguratorComponent },
     ])
   ],
