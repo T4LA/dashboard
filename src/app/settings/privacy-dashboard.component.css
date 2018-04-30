@@ -27,3 +27,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.main-function{
+    display: flex;
+    grid-column: col-start 2 / span 10;
+}
