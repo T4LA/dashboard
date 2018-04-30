@@ -82,7 +82,8 @@ export const data = [
       {
           name: "Procrastination Widget",
           data: [
-              "Date of Assignment Submission"
+              "Date of Assignment Submission",
+              "Number of videos watched"
           ]
       }
     ],
