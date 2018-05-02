@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MockCourseService } from "../services/mock/course.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "privacy-dashboard",
@@ -22,6 +23,12 @@ export class PrivacyDashboardComponent {
       this.courseData = data;
     });
   }
+
+  timelineClick() {
+    this.router.navigate("/settings/privacy/timeline'");
+  }
+
+  
 
   getWidgetsForSelected() {
     let widgetsForData = [];
