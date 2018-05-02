@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { MockEventService } from "../services/mock/event.service";
 
 @Component({
   selector: "event-timeline",
@@ -6,5 +7,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./event-timeline.component.css"]
 })
 export class EventTimelineComponent {
-  constructor() {}
+  events: any;
+
+  constructor(private eventService: MockEventService) {}
+
+  ngOnInit() {
+    this.eventService.getEvents().subscribe(data => {
+      this.events = data;
+    });
+  }
 }
