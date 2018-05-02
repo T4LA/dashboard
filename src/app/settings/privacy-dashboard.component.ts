@@ -13,7 +13,10 @@ export class PrivacyDashboardComponent {
   selectedRow: number;
   selectedCourseIndex: number;
 
-  constructor(private courseService: MockCourseService) {
+  constructor(
+    private courseService: MockCourseService,
+    private router: Router
+  ) {
     //this.courseData = courseService.getCourseSettings();
   }
 
@@ -25,10 +28,8 @@ export class PrivacyDashboardComponent {
   }
 
   timelineClick() {
-    this.router.navigate("/settings/privacy/timeline'");
+    this.router.navigateByUrl("/settings/privacy/timeline");
   }
-
-  
 
   getWidgetsForSelected() {
     let widgetsForData = [];

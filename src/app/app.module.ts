@@ -79,7 +79,8 @@ import { EventTimelineComponent } from "./settings/event-timeline.component";
     WidgetConfiguratorComponent,
     CoursesComponent,
     CoursesPageComponent,
-    PrivacyDashboardComponent
+    PrivacyDashboardComponent,
+    EventTimelineComponent
   ],
   providers: [
     { provide: MockConsentService, useClass: MockConsentService },

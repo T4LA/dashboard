@@ -9,7 +9,11 @@
                 <a href="#">
                     <i class="fa fa-dashboard"></i> Settings</a>
             </li>
-            <li class="active">Privacy Dashboard</li>
+            <li class="active">
+                <a href="/settings/privacy">Privacy Dashboard</a>
+
+            </li>
+            <li class="active">Timeline</li>
         </ol>
     </section>
 
@@ -19,33 +23,80 @@
             <!-- timeline time label -->
             <li class="time-label">
                 <span class="bg-red">
-                    10 Feb. 2014
+                    10 Feb. 2018
                 </span>
             </li>
             <!-- /.timeline-label -->
 
             <!-- timeline item -->
-            <li>
-                <!-- timeline icon -->
-                <i class="fa fa-envelope bg-blue"></i>
+
+            <!-- END timeline item -->
+            <li *ngFor="let event of events; let courseIndex = index">
+                <i class="fa fa-user bg-blue"></i>
                 <div class="timeline-item">
                     <span class="time">
-                        <i class="fa fa-clock-o"></i> 12:05</span>
+                        <i class="fa fa-clock-o"></i> {{ getTimestamp(event) }}</span>
 
                     <h3 class="timeline-header">
-                        <a href="#">Support Team</a> ...</h3>
+                        <a href="#">{{ event.actor }}</a>
+                    </h3>
 
                     <div class="timeline-body">
-                        ... Content goes here
+                        {{event.verb}} {{ event.object }}
                     </div>
 
                     <div class="timeline-footer">
-                        <a class="btn btn-primary btn-xs">...</a>
+                        <a class="btn btn-primary btn-xs">
+                            <i class="fa fa-eye-slash"></i>
+                        </a>
+                        <a class="btn btn-primary btn-xs">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a class="btn btn-primary btn-xs">
+                            <i class="fa fa-download"></i>
+                        </a>
                     </div>
                 </div>
             </li>
-            <!-- END timeline item -->
 
+            <li class="time-label">
+                <span class="bg-red">
+                    20 Feb. 2018
+                </span>
+            </li>
+
+            <li *ngFor="let event of events; let courseIndex = index">
+                <i class="fa fa-user bg-blue"></i>
+                <div class="timeline-item">
+                    <span class="time">
+                        <i class="fa fa-clock-o"></i> {{ getTimestamp(event) }}</span>
+
+                    <h3 class="timeline-header">
+                        <a href="#">{{ event.actor }}</a>
+                    </h3>
+
+                    <div class="timeline-body">
+                        {{event.verb}} {{ event.object }}
+                    </div>
+
+
+                    <div class="timeline-footer">
+                        <a class="btn btn-primary btn-xs">
+                            <i class="fa fa-eye-slash"></i>
+                        </a>
+                        <a class="btn btn-primary btn-xs">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a class="btn btn-primary btn-xs">
+                            <i class="fa fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <i class="fa fa-clock-o-bg-gray"></i>
+            </li>
         </ul>
     </section>
 

@@ -2,29 +2,9 @@ export const Events = [
   {
     timestamp: "2018-04-18T13:05:00+02:00",
     version: "1.0.0",
-    actor: {
-      mbox: "mailto:learner@example.com",
-      name: "You",
-      objectType: "Agent"
-    },
-    verb: {
-      id: "http://adlnet.gov/expapi/verbs/completed",
-      display: {
-        "en-US": "completed"
-      }
-    },
-    object: {
-      id: "http://adlnet.gov/expapi/activities/example",
-      definition: {
-        name: {
-          "en-US": "Assignment"
-        },
-        description: {
-          "en-US": "Assignment 001"
-        }
-      },
-      objectType: "Activity"
-    },
+    actor: "You",
+    verb: "submitted",
+    object: "Assignment 003",
     result: {
       score: {
         scaled: 0.75
@@ -34,35 +14,11 @@ export const Events = [
     }
   },
   {
-    timestamp: "2018-04-15T01:05:00+02:00",
+    timestamp: "2018-04-04T17:55:00+02:00",
     version: "1.0.0",
-    actor: {
-      mbox: "mailto:learner@example.com",
-      account: {
-        name: "learner",
-        homePage: "http://example.com"
-      },
-      name: "You",
-      objectType: "Agent"
-    },
-    verb: {
-      id: "http://adlnet.gov/expapi/verbs/completed",
-      display: {
-        "en-US": "watched"
-      }
-    },
-    object: {
-      id: "http://adlnet.gov/expapi/activities/example",
-      definition: {
-        name: {
-          "en-US": "Video"
-        },
-        description: {
-          "en-US": "Lecture Video 001"
-        }
-      },
-      objectType: "Activity"
-    },
+    actor: "You",
+    verb: "stopped watching",
+    object: "Lecture Video 002",
     result: {
       score: {
         scaled: 0.75
@@ -74,33 +30,10 @@ export const Events = [
   {
     timestamp: "2018-04-04T17:10:00+02:00",
     version: "1.0.0",
-    actor: {
-      mbox: "mailto:learner@example.com",
-      account: {
-        name: "learner",
-        homePage: "http://example.com"
-      },
-      name: "You",
-      objectType: "Agent"
-    },
-    verb: {
-      id: "http://adlnet.gov/expapi/verbs/completed",
-      display: {
-        "en-US": "watched"
-      }
-    },
-    object: {
-      id: "http://adlnet.gov/expapi/activities/example",
-      definition: {
-        name: {
-          "en-US": "Video"
-        },
-        description: {
-          "en-US": "Lecture Video 002"
-        }
-      },
-      objectType: "Activity"
-    },
+    actor: "You",
+    verb: "started watching",
+    object: "Lecture Video 002",
+    course: "Seminar Learning Analytics",
     result: {
       score: {
         scaled: 0.75
@@ -108,5 +41,36 @@ export const Events = [
       success: true,
       completion: true
     }
-  }
+  },
+  {
+    timestamp: "2018-04-04T17:10:00+02:00",
+    version: "1.0.0",
+    actor: "Hendrik Drachsler",
+    verb: "Graded",
+    object: "Assignment 002",
+    course: "Seminar Learning Analytics",
+    result: {
+      score: {
+        scaled: 0.75
+      },
+      success: true,
+      completion: true
+    }
+  },
+  {
+    timestamp: "2018-04-04T17:10:00+02:00",
+    version: "1.0.0",
+    actor: "You",
+    verb: "submitted",
+    object: "Assignment 002",
+    course: "Seminar Learning Analytics",
+    result: {
+      score: {
+        scaled: 0.75
+      },
+      success: true,
+      completion: true
+    }
+  },
+
 ];
