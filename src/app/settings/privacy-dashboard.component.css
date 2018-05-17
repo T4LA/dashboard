@@ -1,34 +1,38 @@
-.data-collection-grid{
-    display: grid;
-    grid-template-columns: repeat(12, [col-start] 1fr);
-    grid-gap: 10px;
+.data-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-gap: 10px;
 }
 
 .active-row {
-    background-color: rgb(170, 170, 209);
+  background-color: rgb(170, 170, 209);
 }
 
 .dataDescription {
-    overflow: hidden;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .data-collection-overview {
-    grid-column: col-start / span 8;
+  grid-column: col-start / span 8;
 }
 
-.selected-data-item{
-    grid-column: col-start 9 / span 4;
+.selected-data-item {
+  grid-column: col-start 9 / span 4;
 }
 
-.button-list{
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.button-list {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.main-function{
-    display: flex;
-    grid-column: col-start 2 / span 10;
+.main-function {
+  display: flex;
+  grid-column: col-start 2 / span 10;
+}
+
+.dashboard-button {
+  min-width: 150px;
 }
