@@ -20,8 +20,16 @@
                     <h3 class="box-title">Data Settings</h3>
                 </div>
                 <div class="box-body">
-                    <ng-container *ngFor="let course of courseData; let courseIndex = index">
-                        <h4>{{ course.title }}</h4>
+                    <mat-form-field>
+                        <mat-select (change)="onCourseSelectionChange($event)" placeholder="Course">
+                            <mat-option *ngFor="let course of courseData" [value]="course">
+                                {{ course.title}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <div *ngIf="selectedCourse !== null">
+                        <h4>{{ selectedCourse.title }}</h4>
                         <div class="table-responsive">
                             <table class="table no-margin">
                                 <thead>
@@ -32,7 +40,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let data of course.data; let i = index" (click)="highlightClickedRow(courseIndex, i)" [class.active-row]="i == selectedRow && courseIndex == selectedCourseIndex">
+                                    <tr *ngFor="let data of selectedCourse.data; let i = index" (click)="highlightClickedRow(courseIndex, i)" [class.active-row]="i == selectedRow && courseIndex == selectedCourseIndex">
                                         <td>
                                             {{ data.name }}
                                         </td>
@@ -48,7 +56,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    </ng-container>
+                    </div>
                 </div>
             </div>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MockCourseService } from "../services/mock/course.service";
 import { Router } from "@angular/router";
+import { MatSelectChange } from "@angular/material";
 
 @Component({
   selector: "privacy-dashboard",
@@ -12,6 +13,7 @@ export class PrivacyDashboardComponent {
   selectedDataItem: any;
   selectedRow: number;
   selectedCourseIndex: number;
+  selectedCourse: any = null;
 
   constructor(
     private courseService: MockCourseService,
@@ -24,11 +26,17 @@ export class PrivacyDashboardComponent {
     this.courseService.getCourseSettings().subscribe(data => {
       console.log("course data", data);
       this.courseData = data;
+      this.selectedCourse = data[0];
+      console.log("Selected Course: ", this.selectedCourse);
     });
   }
 
   timelineClick() {
     this.router.navigateByUrl("/settings/privacy/timeline");
+  }
+
+  onCourseSelectionChange(newValue: MatSelectChange) {
+    this.selectedCourse = newValue.value;
   }
 
   getWidgetsForSelected() {

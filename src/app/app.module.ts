@@ -10,7 +10,7 @@ import { ConsentComponent } from "./settings/consent.component";
 import { WidgetConfiguratorComponent } from "./settings/widget.configurator.component";
 import { DragulaModule } from "ng2-dragula";
 import { MatButtonModule } from "@angular/material/button";
-import { MatCheckboxModule } from "@angular/material";
+import { MatCheckboxModule, MatSelectModule } from "@angular/material";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -45,6 +45,7 @@ import { EventTimelineComponent } from "./settings/event-timeline.component";
     FormsModule,
 
     // MatButtonModule,
+    MatSelectModule,
     MatCheckboxModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
