@@ -41,7 +41,7 @@ export class PrivacyDashboardComponent {
 
   getWidgetsForSelected() {
     let widgetsForData = [];
-    for (let w of this.courseData[this.selectedCourseIndex].widgets) {
+    for (let w of this.selectedCourse.widgets) {
       for (let d of w.data) {
         if (d === this.selectedDataItem.name) {
           if (widgetsForData.findIndex(x => x.name === w.name) === -1) {
@@ -60,9 +60,7 @@ export class PrivacyDashboardComponent {
 
     console.log("course data: ", this.courseData);
 
-    this.selectedDataItem = this.courseData[this.selectedCourseIndex]["data"][
-      this.selectedRow
-    ];
+    this.selectedDataItem = this.selectedCourse.data[this.selectedRow];
 
     console.log("Clicked row: ", this.selectedDataItem);
   };
