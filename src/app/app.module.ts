@@ -10,7 +10,7 @@ import { ConsentComponent } from "./settings/consent.component";
 import { WidgetConfiguratorComponent } from "./settings/widget.configurator.component";
 import { DragulaModule } from "ng2-dragula";
 import { MatButtonModule } from "@angular/material/button";
-import { MatCheckboxModule, MatSelectModule } from "@angular/material";
+import { MatCheckboxModule, MatSelectModule, MatSlideToggleModule } from "@angular/material";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -56,8 +56,10 @@ import { EventTimelineComponent } from "./settings/event-timeline.component";
     MatMenuModule,
     MatListModule,
     MatExpansionModule,
+    MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatSlideToggleModule,
     ThemeModule.forRoot(),
     RouterModule.forRoot([
       { path: "", component: CoursesComponent },

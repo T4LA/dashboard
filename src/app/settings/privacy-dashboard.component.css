@@ -5,7 +5,7 @@
 }
 
 .active-row {
-  background-color: rgb(170, 170, 209);
+  background-color: rgb(194, 194, 194);
 }
 
 .dataDescription {
@@ -30,13 +30,25 @@
 
 .main-function {
   display: flex;
-  grid-column: col-start 2 / span 10;
+  grid-column: col-start 1 / span 12;
 }
 
 .dashboard-button {
   min-width: 150px;
 }
 
-.mat-form-field-infix{
+.mat-form-field-infix {
   width: 250px;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: darkolivegreen;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: darkolivegreen;
+}
+
+.course-select {
+  min-width: 200px;
 }

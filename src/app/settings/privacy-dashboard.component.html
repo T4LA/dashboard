@@ -17,19 +17,17 @@
         <div class="data-collection-grid">
             <div class="box box-info data-collection-overview">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Data Settings</h3>
-                </div>
-                <div class="box-body">
                     <mat-form-field>
-                        <mat-select (change)="onCourseSelectionChange($event)" placeholder="Course">
+                        <mat-select class="course-select" [(value)]="selectedCourse" (change)="onCourseSelectionChange($event)" placeholder="Select Course">
                             <mat-option *ngFor="let course of courseData" [value]="course">
                                 {{ course.title}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-
+                </div>
+                <div class="box-body">
                     <div *ngIf="selectedCourse !== null">
-                        <h4>{{ selectedCourse.title }}</h4>
+                        <h5>Course Data</h5>
                         <div class="table-responsive">
                             <table class="table no-margin">
                                 <thead>
@@ -46,11 +44,13 @@
                                         </td>
                                         <td>
                                             <span class="dataDescription">{{ data.description }}</span>
-
                                         </td>
                                         <td>
-                                            <span *ngIf="data.enabled" class="label label-success">Enabled</span>
-                                            <span *ngIf="!data.enabled" class="label label-danger">Disabled</span>
+                                            <mat-slide-toggle class="example-margin" [color]="Green" [(ngModel)]="data.enabled" [checked]="data.enabled" [disabled]="disabled">
+                                                <span *ngIf="data.enabled" class="label label-success">Enabled</span>
+                                                <span *ngIf="!data.enabled" class="label label-danger">Disabled</span>
+                                            </mat-slide-toggle>
+
                                         </td>
                                     </tr>
                                 </tbody>
@@ -61,6 +61,37 @@
             </div>
 
             <div class="selected-data-item">
+
+                <mat-card *ngIf="selectedDataItem" class="example-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{ selectedDataItem.name }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-divider></mat-divider>
+                    <mat-card-content>
+                        <p>
+                            {{ selectedDataItem.description }}
+                        </p>
+                        <p>
+                            This data is used in the following course widgets that you can view in your dashboard:
+                        </p>
+                        <ng-container *ngFor="let widget of getWidgetsForSelected(); let courseIndex = index">
+                            <p>
+                                {{ widget.name }}
+                            </p>
+                        </ng-container>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary">
+                            DOWNLOAD
+                            <i class="fa fa-download" aria-hidden="true"> </i>
+                        </button>
+                        <button mat-raised-button color="warn">DELETE
+                            <i class="fa fa-times" aria-hidden="true"> </i>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+
                 <div *ngIf="selectedDataItem" class="box box-default">
                     <div class="box-header with-border">
                         <h3 class="box-title">{{ selectedDataItem.name }}</h3>
